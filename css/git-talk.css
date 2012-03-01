@@ -35,3 +35,7 @@ pre.code {
 .error {
    color: #c55;
 }
+
+.step.reduce {
+   font-size:0.8em;
+}

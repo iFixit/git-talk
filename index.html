@@ -39,6 +39,21 @@ vim index.html
        <pre class='code'>
 git branch -a -v
        </pre>
+       <h4>HEAD</h4>
+       <pre class='code'>
+cat .git/HEAD
+       </pre>
+    </div>
+
+    <div class="step" data-x="3000" data-y="-1000">
+       <h1>man</h1>
+       <pre class='code'>
+man git
+man git-branch
+man git-show
+man git-log
+...
+       </pre>
     </div>
 
     <div class="step" data-x="3000" data-y="0">
@@ -53,7 +68,7 @@ git branch branch-name [points-to]
        </pre>
     </div>
 
-    <div class="step" data-x="4000" data-y="0">
+    <div class="step reduce" data-x="4000" data-y="0">
        <h1>Index <small>(to be committed)</small></h1>
        <h3>Show:</h3>
        <pre class='code'>
@@ -97,6 +112,26 @@ git checkout -p
        </pre>
     </div>
 
+    <div class="step reduce" data-x="2000" data-y="1000">
+       <h1>Stash</h1>
+       <h4>Show:</h4>
+       <pre class='code'>
+git stash list
+       </pre>
+       <h4>Save:</h4>
+       <pre class='code'>
+git stash save "Some message"
+# OR save with no name
+git stash
+       </pre>
+       <h4>Apply:</h4>
+       <pre class='code'>
+git stash apply stash@{2}
+# OR restore and drop most recent stash
+git stash pop
+       </pre>
+    </div>
+
     <div class="step" data-x="0" data-y="1000">
        <h1>Switch branches</h1>
        <pre class='code'>
@@ -109,8 +144,12 @@ git checkout master
        <h1>Switch branches</h1>
        <h3>with a dirty working tree</h3>
        <pre class='code'>
+echo "extra" >> index.html
+git diff
 git checkout gh-pages
+git diff
 git checkout master
+git diff
        </pre>
     </div>
 
@@ -132,6 +171,7 @@ git fetch --all
        <br/>commits are not</h2>
 
        <pre class='code'>
+# create and checkout a branch at the current HEAD
 git checkout -b my-branch
 echo "test line" > text
 git add text
