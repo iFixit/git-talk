@@ -1,0 +1,25 @@
+html, body {
+   margin:0;
+   padding:0;
+   font-family: Helvetica, Arial, sans-serif;
+}
+.step {
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+
+    width: 900px;
+    padding: 30px;
+}
+
+.step:not(.active) {
+    opacity: 0.3;
+}
+
+pre.code {
+   text-align:left;
+   background: #555;
+   color:#ddd;
+}
