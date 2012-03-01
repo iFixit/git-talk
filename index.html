@@ -17,16 +17,112 @@
        <h4>remotes</h4>
     </div>
 
-    <div class="step" data-x="1500" data-y="0" data-scale='0.5'>
+    <div class="step" data-x="1500" data-y="0" data-scale='0.2'>
        <h2>git repos are lightweight</h2>
     </div>
 
-    <div class="step" data-x="0" data-y="1000">
+    <div class="step" data-x="2000" data-y="0">
        <h1>do this:</h1>
        <pre class='code'>
  > cd
  > git clone git@github.com:iFixit/git-talk.git
  > cd git-talk
+ > git fetch
+ > vim index.html
+       </pre>
+    </div>
+
+    <div class="step" data-x="2000" data-y="-1000">
+       <h1>git is a DAG</h1>
+       <h2>branches are just pointers</h2>
+       <img style='float:right;' src='http://www.ericsink.com/scm/1764_image001.jpg'/>
+       <pre class='code'>
+ > git branch -a -v
+       </pre>
+    </div>
+
+    <div class="step" data-x="3000" data-y="0">
+       <h1>Branches</h1>
+       <h3>List:</h3>
+       <pre class='code'>
+ > git branch -a -v
+       </pre>
+       <h3>Create:</h3>
+       <pre class='code'>
+ > git branch branch-name [points-to]
+       </pre>
+    </div>
+
+    <div class="step" data-x="4000" data-y="0">
+       <h1>Index <small>(to be committed)</small></h1>
+       <h3>Show:</h3>
+       <pre class='code'>
+ > git diff --cached
+       </pre>
+       <h3>Add to:</h3>
+       <pre class='code'>
+ > git add file-name
+       </pre>
+       <h3>Remove from:</h3>
+       <pre class='code'>
+ > git reset file-name
+       </pre>
+    </div>
+
+    <div class="step" data-x="4000" data-y="1000">
+       <h1>Working Tree</h1>
+       <h3>Show:</h3>
+       <pre class='code'>
+ > git diff [--stat]
+       </pre>
+       <h3>Discard local changes:</h3>
+       <pre class='code'>
+ > git checkout file-name
+       </pre>
+    </div>
+
+    <div class="step" data-x="3000" data-y="1000">
+       <h1>Patch mode</h1>
+       <h3>Add to index:</h3>
+       <pre class='code'>
+ > git add -p
+       </pre>
+       <h3>Remove from index:</h3>
+       <pre class='code'>
+ > git reset -p
+       </pre>
+       <h3>Discard local changes:</h3>
+       <pre class='code'>
+ > git checkout -p
+       </pre>
+    </div>
+
+    <div class="step" data-x="0" data-y="1000">
+       <h1>Switch branches</h1>
+       <pre class='code'>
+ > git checkout gh-pages
+ > git checkout master
+       </pre>
+    </div>
+
+    <div class="step" data-x="0" data-y="1000">
+       <h1>Switch branches</h1>
+       <h3>with a dirty working tree</h3>
+       <pre class='code'>
+ > git checkout gh-pages
+ > git checkout master
+       </pre>
+    </div>
+
+    <div class="step" data-x="0" data-y="1000">
+       <h1>Switch branches</h1>
+       <pre class='code'>
+ > git checkout gh-pages
+       </pre>
+       <pre class='code'>
+ > git branch my-branch
+ > echo "test line" > text
+ > git add text
  > git fetch --all
        </pre>
     </div>
@@ -36,9 +132,10 @@
        <br/>commits are not</h2>
 
        <pre class='code'>
- > echo "line #1" > test
- > git add test
- > git commit -m "test"
+ > git checkout -b my-branch
+ > echo "test line" > text
+ > git add text
+ > git commit -m "adding text"
  > git branch old
  > git checkout master
  > git commit --amend
@@ -46,18 +143,22 @@
        </pre>
     </div>
 
-    <div class="step" data-x="2000" data-y="1000">
-       <h1>git is a DAG</h1>
-       <h2>branches are just pointers</h2>
-       <img style='float:right;' src='http://www.ericsink.com/scm/1764_image001.jpg'/>
-    </div>
 
     <div class="step" data-x="3000" data-y="1000">
        <h2>push / pull</h2>
        <h2>bare / non-bare</h2>
-
        <pre class='code'>
+ > git remote -v
+       </pre>
+    </div>
+
+    <div class="step" data-x="3000" data-y="1000">
+       <h1 class='error'>Conflict!</h1>
+       <pre class='code'>
+ > git 
  > git push
+ > git fetch --all
+ > git log --graph --all
        </pre>
     </div>
 

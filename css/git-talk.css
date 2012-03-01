@@ -21,7 +21,7 @@ html {
 }
 
 .step:not(.active) {
-    opacity: 0.15;
+    opacity: 0.05;
 }
 
 pre.code {
@@ -29,4 +29,9 @@ pre.code {
    background: #444;
    color: #ccc;
    padding:1em;
+   padding-bottom:0.1em;
+}
+
+.error {
+   color: #c55;
 }
