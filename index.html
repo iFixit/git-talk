@@ -140,7 +140,7 @@ git stash pop
        </pre>
     </div>
 
-    <div class="step" data-x="0" data-y="1000">
+    <div class="step" data-x="1000" data-y="1000">
        <h1>Switch branches</h1>
        <pre class='code'>
 git checkout gh-pages
@@ -161,7 +161,7 @@ git diff
        </pre>
     </div>
 
-    <div class="step" data-x="1000" data-y="1000">
+    <div class="step" data-x="0" data-y="2000">
        <h2>history is changable,
        <br/>commits are not</h2>
 
@@ -171,22 +171,42 @@ git checkout -b my-branch
 echo "test line" > text
 git add text
 git commit -m "adding text"
+# create a branch at the current HEAD
 git branch old
 git checkout master
+# add the index to the last commit and edit the message
 git commit --amend
 git log --graph --all
        </pre>
     </div>
 
-
-    <div class="step" data-x="3000" data-y="1000">
-       <h1 class='error'>Conflict!</h1>
+    <div class="step reduce" data-x="1000" data-y="2000">
+       <h1 class='error'>feature</h1>
        <pre class='code'>
-git 
-git push
-git fetch --all
-git log --graph --all
+# list all unmerged feature-branches
+feature list
+# list all feature-branches
+feature list -v
        </pre>
+       <pre class='code'>
+# creates a new branch of master
+feature start name-of-feature
+# does git-checkout
+feature switch name-of-feature
+# merges back into master
+feature finish name-of-feature
+       </pre>
+       <pre class='code'>
+# lists all stashes on the current branch
+feature stashes
+       </pre>
+    </div>
+
+    <div class="step" data-x="2000" data-y="2000">
+       <h1 class='error'>hotfix</h1>
+       <h3>exactly like feature</h3>
+       <p>But merges into / branches from 'stable' and
+       all branches are hotfix-*</p>
     </div>
 
     <script src="js/impress.js"></script>
