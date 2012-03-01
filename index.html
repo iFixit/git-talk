@@ -18,16 +18,26 @@
        <h1>git != svn</h1>
     </div>
 
-    <div class="step" data-x="1024" data-y="0">
+    <div class="step" data-x="1000" data-y="0">
        <h1>git is distributed</h1>
     </div>
 
 
-    git repos are lightweight
-    > cd
-    > git clone git@github.com:iFixit/git-talk.git
-    > cd git-talk
+    <div class="step" data-x="1500" data-y="0" data-scale='0.5'>
+       <h2>git repos are lightweight</h2>
+    </div>
 
+    <div class="step" data-x="0" data-y="1000">
+       <h2>do this</h2>
+       <pre>
+          > cd
+          > git clone git@github.com:iFixit/git-talk.git
+          > cd git-talk
+          > git fetch --all
+       </pre>
+    </div>
+
+<!--
     history is changable
     commits are not
 
@@ -40,6 +50,9 @@
     git is a DAG
     <img src='http://www.ericsink.com/scm/1764_image001.jpg'/>
     branches are just pointers
+ -->
 
+    <script src="js/impress.js"></script>
+    <script>impress();</script>
 </body>
 </html>
